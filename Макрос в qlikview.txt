@@ -1,0 +1,23 @@
+function check_file(path)
+	str=""
+	set excl=CreateObject("Excel.Application")
+	'excl.Visible=true
+	set q=excl.Workbooks.Open(path)
+	for each w in q.Sheets
+		if str="" then
+			str= w.Name
+		else
+			str=str&"|"&w.Name
+		end if
+	next
+	q.Saved=True
+	q.Close
+	set q=Nothing
+	excl.Quit
+	set excl=Nothing
+	check_file=str
+end function
+
+sub test
+	msgbox check_file("\\TSAR-APP\COST-Project\_DATA\ФинСтруктура\ФС_ТБ_2017-06-01.xlsx")
+end sub

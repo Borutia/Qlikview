@@ -1,0 +1,76 @@
+QlikTech_QlikView_Desktop_Edition_v10.0_SR1-CYGNUS
+--------------------------------------------------
+
+- add this to your hosts file or block with firewall:
+
+127.0.0.1	lef1.qliktech.com
+127.0.0.1	lef2.qliktech.com
+
+- install
+- start the QlikView and goto: Settings -> User Preferences -> License
+  and use the following serials to register:
+
+License Key   : 1337 1337 1337 1337
+Control Number: 71778
+
+(- If you get an activating Error window click on: Enter My License Information
+   and use License Enabling Information from bottom) if you dont got
+ an Activation Error...Then:
+
+- Then goto Help -> Activate-License and use one of the following Editions
+  to register:
+
+License Enabling Information:
+
+Partner Edition:
+1337133713371337
+PRODUCTLEVEL;3;;
+PRODUCTLEVEL;10;;
+PRODUCTLEVEL;30;;
+PRODUCTLEVEL;43;;
+PRODUCTLEVEL;80;;
+UNCAPPED;YES;;
+SPECIAL_EDITION;CREATE_EXECUTABLE;;
+SPECIAL_EDITION;QLIKAPP_CONVERTER;;
+SPECIAL_EDITION;SITE;;
+SPECIAL_EDITION;PARTNER;;
+X64;YES;;
+IA64;YES;;
+Q4PH-68U8-CBM8-BZQF-CEH2
+
+
+Educational Edition:
+1337133713371337
+PRODUCTLEVEL;3;;
+PRODUCTLEVEL;10;;
+PRODUCTLEVEL;30;;
+PRODUCTLEVEL;43;;
+PRODUCTLEVEL;80;;
+UNCAPPED;YES;;
+SPECIAL_EDITION;CREATE_EXECUTABLE;;
+SPECIAL_EDITION;QLIKAPP_CONVERTER;;
+SPECIAL_EDITION;SITE;;
+SPECIAL_EDITION;EDU;;
+X64;YES;;
+IA64;YES;;
+LFTL-46TP-DTL2-DQ3X-KEPR
+
+
+Reseller Edition:
+1337133713371337
+PRODUCTLEVEL;3;;
+PRODUCTLEVEL;10;;
+PRODUCTLEVEL;30;;
+PRODUCTLEVEL;43;;
+PRODUCTLEVEL;80;;
+UNCAPPED;YES;;
+SPECIAL_EDITION;CREATE_EXECUTABLE;;
+SPECIAL_EDITION;QLIKAPP_CONVERTER;;
+SPECIAL_EDITION;SITE;;
+SPECIAL_EDITION;RESELLER;;
+X64;YES;;
+IA64;YES;;
+QSX5-R9P2-C9KB-Q5H2-7WN4
+
+
+Enjoy, Team CYGNUS

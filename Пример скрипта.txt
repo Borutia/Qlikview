@@ -1,0 +1,51 @@
+tmp:
+Load *
+where Признак=1;
+LOAD Distinct
+	 [Customer ID], 
+     Customer, 
+     Address, 
+     City, 
+     City&'_'&Address as City_Address,
+     Zip,
+     if([Customer ID]>1000 and [Customer ID]>1100,1,0)  as Признак,
+     Country,
+     [Customer ID]*100 as [Расчетное поле]
+FROM
+[Customer.xls]
+(biff, embedded labels, table is CUSTOMER$)
+where (Country='U.S.A.' or Country='France') and len(City)>10;
+
+tmp_group:
+Load Country,
+avg(cnt_Customer) as avg_Customer
+Group by Country;
+Load
+Country,
+City,
+Count(DISTINCT Customer) as cnt_Customer
+Resident tmp
+group by Country,
+City;
+
+
+spr_Country:
+LOAD * INLINE [
+    Country, Статус
+    U.S.A., 1
+    Mexico, 2
+    France, 3
+];
+
+let date1='01.01.2020';
+let date2='01.03.2020';
+
+
+Календарь:
+load date('$(date1)'+(RowNo()-1),'DD.MM.YYYY') as Дата,
+Year(date('$(date1)'+(RowNo()-1),'DD.MM.YYYY')) as Год,
+QuarterName(date('$(date1)'+(RowNo()-1),'DD.MM.YYYY')) as Квартал,
+Month(date('$(date1)'+(RowNo()-1),'DD.MM.YYYY')) as Месяц,
+Week(date('$(date1)'+(RowNo()-1),'DD.MM.YYYY')) as Неделя,
+WeekDay(date('$(date1)'+(RowNo()-1),'DD.MM.YYYY')) as День_недели
+AutoGenerate ('$(date2)'-'$(date1)');
