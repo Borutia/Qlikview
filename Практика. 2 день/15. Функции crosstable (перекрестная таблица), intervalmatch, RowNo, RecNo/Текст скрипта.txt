@@ -1,0 +1,58 @@
+//CrossTable
+
+tmp:
+CrossTable (Период, Данные, 2)
+LOAD Категория1, 
+     Категория2, 
+     Январь, 
+     Февраль, 
+     Март, 
+     Апрель, 
+     Май, 
+     Июнь, 
+     Июль, 
+     Август, 
+     Сентябрь, 
+     Октябрь, 
+     Ноябрь, 
+     Декабрь
+FROM
+[C:\Users\acer\Desktop\qlikview\Презентация и практика\Практика. 2 день\15. Функции crosstable (перекрестная таблица), intervalmatch, RowNow, RecNow\Croosstable.xls]
+(biff, embedded labels, table is Лист1$);
+
+//intervalmatch
+
+/*Данные:
+LOAD Клиент, 
+     nmbr
+FROM
+[C:\Users\acer\Desktop\qlikview\Презентация и практика\Практика. 2 день\15. Функции crosstable (перекрестная таблица), intervalmatch, RowNow, RecNow\intervalmatch.xls]
+(biff, embedded labels, table is Данные$);
+
+left join(Данные)
+IntervalMatch(nmbr)
+LOAD q1, 
+     q2
+FROM
+[C:\Users\acer\Desktop\qlikview\Презентация и практика\Практика. 2 день\15. Функции crosstable (перекрестная таблица), intervalmatch, RowNow, RecNow\intervalmatch.xls]
+(biff, embedded labels, table is Интервалы$);
+
+left join(Данные)
+LOAD q1, 
+     q2,
+     name
+FROM
+[C:\Users\acer\Desktop\qlikview\Презентация и практика\Практика. 2 день\15. Функции crosstable (перекрестная таблица), intervalmatch, RowNow, RecNow\intervalmatch.xls]
+(biff, embedded labels, table is Интервалы$);*/
+
+//Rownom recnow
+
+/*tmp:
+LOAD Клиент, 
+     nmbr,
+     RecNo() as Номер_записи_из_источника,
+     RowNo() as Номер_записи_в_новой_таблице
+FROM
+[C:\Users\acer\Desktop\qlikview\Презентация и практика\Практика. 2 день\15. Функции crosstable (перекрестная таблица), intervalmatch, RowNo, RecNo\intervalmatch.xls]
+(biff, embedded labels, table is Данные$)
+where fmod(nmbr,2)=0;*/

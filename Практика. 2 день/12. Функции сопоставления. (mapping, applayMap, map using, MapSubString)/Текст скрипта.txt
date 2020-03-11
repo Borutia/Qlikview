@@ -1,0 +1,39 @@
+//Таблица для маппинга
+map_table:
+Mapping
+LOAD * INLINE [
+    F1, F2
+    a, 1
+    a, 5
+    b, 2
+    c, 3
+    d, 4
+    e, 5
+    f, 6
+];
+
+//Таблица для маппинга
+map_table1:
+Mapping
+LOAD * INLINE [
+    F11, F22
+    AA, 11
+    BB, 22
+    CC, 33
+];
+
+//Использование автоматического сопоставления
+MAP F1 using map_table;
+
+tmp:
+LOAD *,
+ApplyMap('map_table',F11,'Значение='&F11&' не найдено') as F2, //Функция ApplyMap
+MapSubString('map_table1',F11) as F22 //Функция MapSubString
+;
+LOAD * INLINE [
+    F11
+    AA_BB_CC_CC_DD
+    c
+    w
+    r
+];

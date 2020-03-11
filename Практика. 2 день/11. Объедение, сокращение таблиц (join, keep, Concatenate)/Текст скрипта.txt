@@ -1,0 +1,145 @@
+//Left join/keep
+
+
+//tmp:
+tmp:
+LOAD * INLINE [
+    F1, F2
+    a, 1
+    b, 2
+    c, 3
+    d, 4
+];
+
+//left join(tmp)
+left keep(tmp)
+tmp2:
+//left join
+LOAD * INLINE [
+    F1, F3
+    a, 2
+    d, 5
+    f, 7
+];
+
+
+
+//right join/keep
+
+/*
+
+//tmp:
+tmp:
+LOAD * INLINE [
+    F1, F2
+    a, 1
+    b, 2
+    c, 3
+    d, 4
+];
+
+//Right join(tmp)
+Right keep(tmp)
+tmp2:
+LOAD * INLINE [
+    F1, F3
+    a, 2
+    d, 5
+    f, 7
+];
+
+
+*/
+
+//inner join/keep
+
+/*
+//tmp:
+tmp:
+LOAD * INLINE [
+    F1, F2
+    a, 1
+    b, 2
+    c, 3
+    d, 4
+];
+
+//inner join(tmp)
+inner keep(tmp)
+tmp2:
+LOAD * INLINE [
+    F1, F3
+    a, 2
+    d, 5
+    f, 7
+];
+*/
+
+//join
+
+/*
+//tmp:
+tmp:
+LOAD * INLINE [
+    F1, F2
+    a, 1
+    b, 2
+    c, 3
+    d, 4
+];
+
+join(tmp)
+//left join
+LOAD * INLINE [
+    F1, F3
+    a, 2
+    d, 5
+    f, 7
+];
+
+*/
+
+//Concatenate
+/*
+
+tmp:
+LOAD * INLINE [
+    F1, F2
+    a, 1
+    b, 2
+    c, 3
+    d, 4
+];
+
+Concatenate(tmp)
+LOAD * INLINE [
+    F1, F3
+    a, 2
+    d, 5
+    f, 7
+];
+
+*/
+
+//NoConcatenate
+/*
+tmp:
+LOAD * INLINE [
+    F1, F2
+    a, 1
+    b, 2
+    c, 3
+    d, 4
+];
+
+NoConcatenate
+tmp2:
+LOAD * INLINE [
+    F1, F2
+    a, 1
+    b, 2
+    c, 3
+    d, 4
+];
+
+*/

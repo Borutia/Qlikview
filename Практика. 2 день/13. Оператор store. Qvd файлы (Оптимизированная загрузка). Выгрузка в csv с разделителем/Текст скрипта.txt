@@ -1,0 +1,35 @@
+tmp:
+LOAD * INLINE [
+    F1, F2
+    a, 1
+    b, 2
+    c, 3
+    d, 4
+    e, 5
+    f, 6
+];
+
+store tmp into tmp.qvd;
+
+store tmp into tmp.csv (txt,delimiter is ';');
+
+drop Table tmp;
+
+//Оптимизированная загрузка
+tmp:
+LOAD F1, 
+     F2
+FROM
+tmp.qvd
+(qvd);
+
+drop Table tmp;
+
+//Не оптимизированная загрузка
+tmp:
+LOAD F1, 
+     F2
+FROM
+tmp.qvd
+(qvd)
+where F2<=5;

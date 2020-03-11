@@ -1,0 +1,55 @@
+//Функции интерпретации
+
+//num#
+
+set q='q10 000,1q';
+
+let n=num(Num#(q,'q#,#q',',',' '),'# ##0,0');
+
+trace 'q=$(q) n=$(n)';
+
+//date#
+
+set dat='2020-05/22';
+
+let dat1=alt(date#(dat,'DD.MM.YYYY'),date(date#(dat,'YYYY-MM/DD'),'DD.MM.YYYY'),'нет допустимой даты');
+
+trace 'dat=$(dat) dat1=$(dat1)';
+
+//time#
+
+set t='q 21.39';
+
+let tm=time(time#( t, 'q hh.mm' )-0.1,'hh.mm');
+
+trace 't=$(t) tm=$(tm)';
+
+//dual
+
+[Дни недели]:
+load dual ( DayOfWeek,numrep ) as DayOfWeek 
+
+inline
+[ DayOfWeek,numrep
+
+Monday,0
+
+Tuesday,1
+
+Wednesday,2
+
+Thursday,3
+
+Friday,4
+
+Saturday,5
+
+Sunday,6 ];
+
+//text
+
+set txt='1234';
+
+let txt1=Text(text)+1;
+
+trace 'txt=$(txt) txt1=$(txt1)';
